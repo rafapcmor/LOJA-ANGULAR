@@ -4,16 +4,16 @@ import { AppComponent } from './app.component';
 import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 import { BarraComponent } from './barra/barra.component';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ProdutoAlertasComponent } from './produto-alertas/produto-alertas.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListaProdutosComponent,
-    BarraComponent
+    BarraComponent,
+    ProdutoAlertasComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ListaProdutosComponent },
     ])

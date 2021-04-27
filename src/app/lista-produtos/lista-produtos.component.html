@@ -1,13 +1,26 @@
 <h2>Produtos</h2>
-<div *ngFor="let produto de produtos">
-
-    <h3>
-        <a [title]="produto.nome + ' details'">
+<div class="container" *ngFor="let produto of produtos">
+    <h3 class="text-primary"><strong>
+    <p [title]="produto.nome + ' details'">
           {{ produto.nome }}
-        </a>
+        </p></strong>
     </h3>
 
+    <div>
+
+        <img src="{{produto.imagePath}}" width="200" alt="">
+
+    </div>
+
     <p *ngIf="produto.descricao">
-        Descricao: {{ produto.descricao}}
+        Descricao: {{ produto.descricao }}
     </p>
+
+    <button class="btn btn-primary mb-4" (click)="compartilhar()">
+        Compartilhar
+      </button>
+
+    <app-produto-alertas [produto]="produto" (notify)="notificar()">>
+    </app-produto-alertas>
+
 </div>
